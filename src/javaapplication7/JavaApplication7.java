@@ -143,7 +143,7 @@ class OneTriangle {
 //        gl2.glMaterialfv(gl2.GL_FRONT, gl2.GL_SPECULAR, mat_specular);
 //        gl2.glMaterialfv(gl2.GL_FRONT, gl2.GL_SHININESS, mat_shininess);
 
-        float[] indices = { 0, 0, 2f, 0 };
+        float[] indices = { 0, 0, 50f, 0 };
         ByteBuffer ifb=ByteBuffer.allocateDirect(indices.length*4);
         ifb.order(ByteOrder.nativeOrder());
         indexbuf=ifb.asFloatBuffer();
@@ -169,8 +169,8 @@ class OneTriangle {
         gl2.glMaterialf(gl2.GL_FRONT, gl2.GL_SHININESS, 100);
 //        gl2.glMaterialf(gl2.GL_FRONT, gl2.GL_SPECULAR, 1);
 //
-        gl2.glEnable(gl2.GL_LIGHTING);
-        gl2.glEnable(gl2.GL_LIGHT0);
+//        gl2.glEnable(gl2.GL_LIGHTING);
+//        gl2.glEnable(gl2.GL_LIGHT0);
         gl2.glEnable(gl2.GL_DEPTH_TEST);
 
 
@@ -221,13 +221,14 @@ class OneTriangle {
 
     }
     static void updatePositions() {
-        if(x1<-100||x1>100)
+        final int a=75;
+        if(x1<-a||x1>a)
             xx1=-xx1;
-        if(y1<-100||y1>100)
+        if(y1<-a||y1>a)
             yy1=-yy1;
-        if(x2<-100||x2>100)
+        if(x2<-a||x2>a)
             xx2=-xx2;
-        if(y2<-100||y2>100)
+        if(y2<-a||y2>a)
             yy2=-yy2;
         x1+=xx1;
         y1+=yy1;
@@ -256,19 +257,16 @@ class OneTriangle {
 
 
 
-        gl2.glLoadIdentity();
-        glu.gluLookAt(0, 0, 0, 0, 0, -1, 0, 1, 0);
-        gl2.glTranslated(x1, y1, -0);
-        gl2.glLightfv(gl2.GL_LIGHT0, gl2.GL_POSITION, indexbuf);
+       
 
         gl2.glLoadIdentity();
         
-        
-        
+gl2.glColor3f(1f, 1f, 1f);
+
         gl2.glTranslated(x1, y1, -322);
-        gl2.glRotatef((float)deg, 0, 1, 0);
-        
+
         gl2.glCallList(listName);
+                
 
         
 //        
