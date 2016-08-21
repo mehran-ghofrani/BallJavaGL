@@ -162,15 +162,15 @@ class OneTriangle {
 //        gl2.glLightfv(gl2.GL_LIGHT0, gl2.GL_DIFFUSE,testing);
 //        gl2.glLightfv(gl2.GL_LIGHT0, gl2.GL_SPECULAR,testing);
 
-        gl2.glColorMaterial(GL.GL_FRONT_AND_BACK, gl2.GL_SPECULAR);
+//        gl2.glColorMaterial(GL.GL_FRONT_AND_BACK, gl2.GL_SPECULAR);
         gl2.glEnable(gl2.GL_COLOR_MATERIAL);
 
 
         gl2.glMaterialf(gl2.GL_FRONT, gl2.GL_SHININESS, 100);
 //        gl2.glMaterialf(gl2.GL_FRONT, gl2.GL_SPECULAR, 1);
 //
-//        gl2.glEnable(gl2.GL_LIGHTING);
-//        gl2.glEnable(gl2.GL_LIGHT0);
+        gl2.glEnable(gl2.GL_LIGHTING);
+        gl2.glEnable(gl2.GL_LIGHT0);
         gl2.glEnable(gl2.GL_DEPTH_TEST);
 
 
